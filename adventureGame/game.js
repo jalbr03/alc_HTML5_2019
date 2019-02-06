@@ -37,8 +37,8 @@ function game(){
     var playerName = prompt("waht is your name?");
     alert("welcome to the mouth! " + playerName);
     
-    //Prison();
     ThePrison();
+    //StandingInThePrison();
     
         
     } 
@@ -52,7 +52,7 @@ function game(){
             
             if(man == "say sorry")
                 {
-                    alert("the man says its fine I'm just...(snore)");
+                    alert('the man says "its fine Im just..."(snore)');
                     StandingInThePrison();
                     
                 }
@@ -60,13 +60,14 @@ function game(){
                 {
                     alert("The sudden hit to the face knocks him out and gave him a bloody nose.");
                     invintory.badyM += 1;
+                    StandingInThePrison();
                     
                 }
             else{
                 alert("what?!")
                 ThePrison();
             }
-            StandingInThePrison();
+            
         }
         
         if(thePrison == "taunt" || thePrison == "taunt guard"){
@@ -75,12 +76,18 @@ function game(){
             if(taunt == "spit"){
                 
                 alert("you spit as hard as you can but just miss but he does not move you cant even see him breath");
+                StandingInThePrison();
                }
-            if(taunt == "yell"){
+            else if(taunt == "yell"){
                 
                 alert("you yell as loud as you can but he does not move you cant even see him breath");
+                StandingInThePrison();
                }
-            StandingInThePrison();
+            else{
+            alert("What?!");
+            ThePrison();
+        }
+            
         }
             
         
@@ -88,23 +95,16 @@ function game(){
             alert("What?!");
             ThePrison();
         }
+    }
     function StandingInThePrison(){
         var manDead = 0;
         if(manDead == 0){
-            var standingInThePrison = prompt("You are in the midle of the room \n -look \n -sleep \n -kill the man in bed ");
+            var standingInThePrison = prompt("You are in the midle of the room \n -eat mold \n -sleep \n -kill the man in bed ");
         }
         if(manDead == 1){
             var standingInThePrison = prompt("You are in the midle of the room \n -look \n -sleep");
         }
-            
-        if(standingInThePrison == "look"){
-            var looking = prompt("you see some mold, the man and a window. \n -kill the man in bed \n -eat mold \n -break window ");     
-            StandingInThePrison();
-            if(looking == "eat mold"){
-                alert("you eat the mold and feel stronger now your ready to fight!");
-                ReadytoFight();
-            }
-        } 
+     
             
         if(standingInThePrison == "sleep"){
             alert("You fall asleep in the cot.");
@@ -116,19 +116,51 @@ function game(){
             if(standingInThePrison == "kill the man in bed" || standingInThePrison == "kill" || standingInThePrison == "kill the man"){
                 alert("You stab the man while he snores and you see the blood on you hands now the prison is completely silent.");
                 invintory.badyM += 1;
+                manDead = 1;
                 StandingInThePrison();
             }    
         }  
         
-        if(standingInThePrison == "eat mold"){
+        if(standingInThePrison == "eat mold" || standingInThePrison == "eat"){
             alert("you eat the mold and feel stronger now your ready to fight!");
             ReadytoFight();
         }
+        
+        else{
+            alert("What?!");
+            StandingInThePrison();
+        }
     }
     function ReadytoFight(){
-        var readytofight = prompt("Now what? \n - break to window \n - dig under prison \n - spit at guard so hard he dies");
+        var readytofight = prompt("Now what? \n - break window \n - dig under prison \n - spit at guard so hard he dies");
         
-        if(readytofight == "break to window" || readytofight == "break"){
+        switch(readytofight){
+            case "break window" || "break":
+                var window = alert("you break the window and run away!");
+                
+                ReadytoFight();
+            break;
+                
+            case "dig under prison" || "dig":
+                var window = alert("you dig and dig and see the light of day and run away!");
+                
+                ReadytoFight();
+            break;
+            
+            case "spit at guard so hard he dies" || "spit" || "spit at guard":
+                var window = alert("you spit so hard and pierces his helm but does not move.");
+                
+                ReadytoFight();
+            break;
+                
+            default:
+                alert("I dont know what " + readytofight +" is.")
+                ReadytoFight();
+            break;
+            
+        }
+        /*
+        if(readytofight == "break window" || readytofight == "break"){
             alert("a");
         }
         if(readytofight == "dig under prison" || readytofight == "dig"){
@@ -137,8 +169,9 @@ function game(){
         if(readytofight == "spit at guard so hard he dies" || readytofight == "spit" || readytofight == "spit at guard") {
             alert("c");
         }
+        */
     }
-}
+
         
         
         
