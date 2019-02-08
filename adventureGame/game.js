@@ -26,37 +26,45 @@ var invintory = {
     spitAmo:10,
     badyM:0,
 }
-
-
-
-game();
-
+/*
+function getRandint(){
+    var randInt = math.floor(Math,random()* Math,floor(max));
+    
+    return randInt;
+}
+*/
+//game();
+ReadytoFight();
 function game(){
+    //var wizardNames = ["fatty", "big fatty", "foot"];
+    
+    //alert("legend of "+wizardNames[math.floor(Math.random()* 4)]+"!");
     
     document.write("Legend of my mouth");
     var playerName = prompt("waht is your name?");
     alert("welcome to the mouth! " + playerName);
     
     ThePrison();
-    //StandingInThePrison();
+    //RunningAway();
     
         
     } 
 
 
     function ThePrison(){
+        //RunningAway();
         var thePrison = prompt("You wake up and see a man in the same bed you are in you get up not knowing why you are in this place. \n -wake man \n -taunt guard");
         
-        if(thePrison == "wake man" ||  thePrison == "wake"){
+        if(thePrison == "1" || thePrison == "wake man" ||  thePrison == "wake"){
             var man = prompt("The man looks at you puzzled why you disturbed his slumber. \n -say sorry \n -punch him in the face");
             
-            if(man == "say sorry")
+            if(man == "1" || man == "say sorry")
                 {
                     alert('the man says "its fine Im just..."(snore)');
                     StandingInThePrison();
                     
                 }
-            if(man == "punch" || man == "punch him" || man == "punch him in the face")
+            if(man == "2" || man == "punch" || man == "punch him" || man == "punch him in the face")
                 {
                     alert("The sudden hit to the face knocks him out and gave him a bloody nose.");
                     invintory.badyM += 1;
@@ -70,15 +78,15 @@ function game(){
             
         }
         
-        if(thePrison == "taunt" || thePrison == "taunt guard"){
+        if(man == "2" || thePrison == "taunt" || thePrison == "taunt guard"){
             var taunt = prompt("how do you want to taunt \n -spit \n -yell")
             
-            if(taunt == "spit"){
+            if(taunt == "1" || taunt == "spit"){
                 
                 alert("you spit as hard as you can but just miss but he does not move you cant even see him breath");
                 StandingInThePrison();
                }
-            else if(taunt == "yell"){
+            else if(taunt == "2" || taunt == "yell"){
                 
                 alert("you yell as loud as you can but he does not move you cant even see him breath");
                 StandingInThePrison();
@@ -106,14 +114,14 @@ function game(){
         }
      
             
-        if(standingInThePrison == "sleep"){
+        if(standingInThePrison == "2" || standingInThePrison == "sleep"){
             alert("You fall asleep in the cot.");
             ThePrison();
             
             
         }
         if(manDead == 0){
-            if(standingInThePrison == "kill the man in bed" || standingInThePrison == "kill" || standingInThePrison == "kill the man"){
+            if(standingInThePrison == "3" || standingInThePrison == "kill the man in bed" || standingInThePrison == "kill" || standingInThePrison == "kill the man"){
                 alert("You stab the man while he snores and you see the blood on you hands now the prison is completely silent.");
                 invintory.badyM += 1;
                 manDead = 1;
@@ -121,7 +129,7 @@ function game(){
             }    
         }  
         
-        if(standingInThePrison == "eat mold" || standingInThePrison == "eat"){
+        if(standingInThePrison == "1" || standingInThePrison == "eat mold" || standingInThePrison == "eat"){
             alert("you eat the mold and feel stronger now your ready to fight!");
             ReadytoFight();
         }
@@ -135,22 +143,22 @@ function game(){
         var readytofight = prompt("Now what? \n - break window \n - dig under prison \n - spit at guard so hard he dies");
         
         switch(readytofight){
-            case "break window" || "break":
+            case "1": case "break window": case "break":
                 var window = alert("you break the window and run away!");
                 
-                ReadytoFight();
+                RunningAway();
             break;
                 
-            case "dig under prison" || "dig":
+            case "2": case "dig under prison": case "dig":
                 var window = alert("you dig and dig and see the light of day and run away!");
                 
-                ReadytoFight();
+                RunningAway();
             break;
             
-            case "spit at guard so hard he dies" || "spit" || "spit at guard":
+            case "3": case "spit at guard so hard he dies": case "spit": case "spit at guard":
                 var window = alert("you spit so hard and pierces his helm but does not move.");
                 
-                ReadytoFight();
+                RunningAway();
             break;
                 
             default:
@@ -158,6 +166,44 @@ function game(){
                 ReadytoFight();
             break;
             
+        }
+    }
+        
+        function RunningAway(){
+            var runningaway = prompt("You are now running away! YA! You come to a fork in the road. \n - left \n - right");
+            
+            switch(runningaway){
+            case "l": case "left":
+                var window = alert("You go left and see an old man!");
+                Left();
+                    
+            break;
+                
+            case "r": case "right":
+                var window = alert("you go right and see an old lady!");
+                
+            break;
+                    
+            default:
+                alert("I dont know what " + runningaway +" is.")
+                RunningAway();
+            break;
+            }
+        }
+        function Left(){
+            var left = prompt("the old man says 'In order to pass you must answer this ridle, there are 100 inhabitents in a vilage and you know at least one of them is a werewolf and you also know werewolf lie and humans tell the trueth all of them say at least one of us is a werewolf haw many werewolf are there?'")
+            
+            switch(left){
+            case "100": case "all": case "all of them":
+                var window = alert("You go left and see an old man!");
+                
+            break;
+                    
+            default:
+                alert("ha ha ha no now you need to go back!! and try again")
+                ThePrison();
+            break;
+            }
         }
         /*
         if(readytofight == "break window" || readytofight == "break"){
@@ -170,7 +216,7 @@ function game(){
             alert("c");
         }
         */
-    }
+    
 
         
         
@@ -178,9 +224,10 @@ function game(){
         
     
     
-    
-    
-    
+
+                                                              
+                                                              
+                                                              
     
     
     
