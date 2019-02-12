@@ -191,11 +191,11 @@ function game(){
             }
         }
         function Left(){
-            var left = prompt("the old man says 'In order to pass you must answer this ridle, there are 100 inhabitents in a vilage and you know at least one of them is a werewolf and you also know werewolf lie and humans tell the trueth all of them say at least one of us is a werewolf haw many werewolf are there?'")
+            var left = prompt("The old man says 'In order to pass you must answer this ridle, there are 100 inhabitents in a vilage and you know at least one of them is a werewolf and you also know werewolf lie and humans tell the trueth all of them say at least one of us is a werewolf haw many werewolf are there?'")
             
             switch(left){
             case "100": case "all": case "all of them":
-                var window = alert("You go left and see an old man!");
+                var window = alert("correct!! now you may pass.");
                 
             break;
                     
@@ -204,6 +204,64 @@ function game(){
                 ThePrison();
             break;
             }
+        }
+        function Right(){
+            var right = prompt("The old Lady says 'In order to pass you must answer this ridle, whats black and white and read all over!?'")
+            
+            switch(right){
+            case "news paper": case "news": case "panguin in the sun":
+                var window = alert("correct!! now you may pass.");
+                
+            break;
+                    
+            default:
+                alert("ha ha ha no now you need to go back!! and try again")
+                ThePrison();
+            break;
+            }
+        }
+
+        function Downthepath(){
+            var downthepath = prompt("As you go down the path you see a big brown Troly and he says.HA you tiny human you are not going to pass through me!! \n - hit \n - spit \n - run");
+            
+            switch(downthepath){
+            case "hit": case "smack": case "punch":
+                var hitting = prompt("What do you want to hit him with?\n - food \n - sword \n - spit");
+                //  
+                switch(hitting){
+                    case"sword":
+                        
+                    break
+                    case "spit":
+                    var spitting = prompt("How hard do you want to spit you have "+invintory.spitAmo+"power left."); 
+                        
+                    switch(hitting){
+                        case "5": case "6": case "7": case "8": case "9": case "10": 
+                            prompt("You spit so hard it go right through his head.")
+                        break;
+                                
+                        default:
+                            alert("you try to spit but it just splats, he then crushes you.")
+                            ThePrison();
+                        break;
+                    }   
+                }
+                //
+                    
+            break;
+                    
+            case "spit":
+                alert("How hard do you want to spit you have "+invintory.spitAmo+"power left.");
+                
+            break;
+                  
+                    
+            default:
+                alert("I dont know what " + downthepath +" is.")
+                Downthepath();
+            break;
+            }
+            
         }
         /*
         if(readytofight == "break window" || readytofight == "break"){
