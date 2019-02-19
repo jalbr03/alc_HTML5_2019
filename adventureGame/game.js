@@ -27,14 +27,14 @@ case"inventory": case"i": case"check inventory":
 
 
 var invintory = {
-    coins:1000,
-    food:0,
-    sword:0,
-    spitAmo:10,
-    badyM:0,
-}
+    coins: 1000,
+    food: 0,
+    sword: 0,
+    spitAmo: 10,
+    badyM: 0
+};
 
-var checkinventory = function(){
+var checkinventory = function () {
     alert("stuff:\n coins: " + invintory.coins + "\n food: " + invintory.food + "\n sword: " + invintory.sword + "\n spitamo: " + invintory.spitAmo);
 }
 
@@ -56,7 +56,7 @@ function game(){
     
     document.write("Legend of my mouth");
     var playerName = prompt("waht is your name?");
-    alert("thanks for playing! " + playerName);
+    alert("welcome to the mouth! " + playerName);
     
     ThePrison();
     //RunningAway();
