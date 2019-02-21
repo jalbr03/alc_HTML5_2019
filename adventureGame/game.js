@@ -1,31 +1,3 @@
-// ha ha we dun
-/*
-    alot
-*/
-
-//will tell the html what to do
-//document.write("<h3>AAHHH you will <em>die</em> to day!!!</h3>");
-
-//alert("Warning bad people are in your pc!!! Call 555-555-5555");
-
-//confirm("Do you want to call?");
-
-//prompt("Do you want to call now?(y,n)");
-
-//prompt("really?! now?(y,n)");
-
-//var pc = prompt("what is your name?");
-
-//confirm("So your name is " + pc + "?");
-
-//confirm("AH that sucks!! " + pc);
-/*
-case"inventory": case"i": case"check inventory":
-    checkinventory();
-    //your func.
-*/
-
-
 var invintory = {
     coins: 1000,
     food: 0,
@@ -40,26 +12,16 @@ var checkinventory = function () {
 
 var manDead = 0;
 var word;
-/*
-function getRandint(){
-    var randInt = math.floor(Math,random()* Math,floor(max));
-    
-    return randInt;
-}
-*/
+again = true;
+
 game();
 //ReadytoFight();
 function game(){
-    //var wizardNames = ["fatty", "big fatty", "foot"];
-    
-    //alert("legend of "+wizardNames[math.floor(Math.random()* 4)]+"!");
-    
     document.write("Legend of my mouth");
     var playerName = prompt("waht is your name?");
     alert("welcome to the mouth! " + playerName);
     
     ThePrison();
-    //RunningAway();
     
         
 } 
@@ -67,6 +29,7 @@ function game(){
     function ThePrison(){
 //\\//\\//\\//\\//\\//\\//\\//\\//\\//\\//\\//\\//\\//\\//\\//\\//\\//\\//\\//\\//\\//\\//\\//\\//\\//\\//\\//\\//\\//\\//\\//\\//\\//\\//\\//\\//\\//\\//\\//\\
         var thePrison = prompt("You wake up and see a man in the same bed you are in you get up not knowing why you are in this place. \n -wake man \n -taunt guard");
+        invintory.spitAmo = 10;
         
         switch(thePrison){
             case"inventory": case"i": case"check inventory":
@@ -109,8 +72,25 @@ function game(){
                         break;
                         
                     case "1": case "spit":
-                        alert("you spit as hard as you can but just miss but he does not move you cant even see him breath");
-                        StandingInThePrison();
+                        while (again){
+                            var againspit = prompt("You spit as hard as you can but just miss but he does not move you cant even see him breath. Do you want to spit again? You have :" +invintory.spitAmo  + " spitamo");
+                            switch(againspit){
+                                case"y": case"yes":
+                                    invintory.spitAmo --;
+                                    break;
+                                case"n": case"no":
+                                    StandingInThePrison();
+                                break;
+                                default:
+                                    alert("I dont know what " + againspit +" is.") 
+                                break;
+                            }
+                        if(invintory.spitAmo <= 0){
+                            alert("your mouth is dry");
+                            StandingInThePrison();
+                        }
+                        }
+                        
                     
                     break;
                         
@@ -231,7 +211,7 @@ function game(){
                 
             case "2": case "r": case "right":
                 var window = alert("you go right and see an old lady!");
-                
+                Right();
             break;
                     
             default:
@@ -280,110 +260,3 @@ function game(){
             break;
             }
         }
-
-        function Downthepath(){
-            var downthepath = prompt("As you go down the path you see a big brown Troly and he says.HA you tiny human you are not going to pass through me!! \n - hit \n - spit \n - run");
-            
-            switch(downthepath){
-                        case"inventory": case"i": case"check inventory":
-                            checkinventory();
-                            Downthepath();
-                        break;
-                        
-            case "hit": case "smack": case "punch":
-                var hitting = prompt("What do you want to hit him with?\n - food \n - sword \n - spit");
-                //  
-                switch(hitting){
-                        case"inventory": case"i": case"check inventory":
-                            checkinventory();
-                            Downthepath();
-                        break;
-                        
-                    case"sword":
-                        
-                    break
-                    case "spit":
-                    var spitting = prompt("How hard do you want to spit you have "+invintory.spitAmo+"power left."); 
-                        
-                    switch(hitting){
-                        case"inventory": case"i": case"check inventory":
-                            checkinventory();
-                            Downthepath();
-                        break;
-                        
-                        case "5": case "6": case "7": case "8": case "9": case "10": 
-                            prompt("You spit so hard it go right through his head.")
-                        break;
-                                
-                        default:
-                            alert("you try to spit but it just splats, he then crushes you.")
-                            ThePrison();
-                        break;
-                    }   
-                }
-                //
-                    
-            break;
-                    
-            case "spit":
-                alert("How hard do you want to spit you have "+invintory.spitAmo+"power left.");
-                
-            break;
-                  
-                    
-            default:
-                alert("I dont know what " + downthepath +" is.")
-                Downthepath();
-            break;
-            }
-            
-        }
-        /*
-        if(readytofight == "break window" || readytofight == "break"){
-            alert("a");
-        }
-        if(readytofight == "dig under prison" || readytofight == "dig"){
-            alert("b");
-        }
-        if(readytofight == "spit at guard so hard he dies" || readytofight == "spit" || readytofight == "spit at guard") {
-            alert("c");
-        }
-        */
-    
-
-        
-        
-        
-        
-    
-    
-
-                                                              
-                                                              
-                                                              
-    
-    
-    
-    
-    
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
