@@ -5,32 +5,23 @@ var invintory = {
     spitAmo: 10,
     badyM: 0
 };
-
 var checkinventory = function () {
     alert("stuff:\n coins: " + invintory.coins + "\n food: " + invintory.food + "\n sword: " + invintory.sword + "\n spitamo: " + invintory.spitAmo);
 }
-
 var manDead = 0;
 var word;
 again = true;
-
 game();
-//ReadytoFight();
 function game(){
     document.write("Legend of my mouth");
     var playerName = prompt("waht is your name?");
     alert("welcome to the mouth! " + playerName);
-    
     ThePrison();
-    
-        
-} 
-
+}
     function ThePrison(){
 //\\//\\//\\//\\//\\//\\//\\//\\//\\//\\//\\//\\//\\//\\//\\//\\//\\//\\//\\//\\//\\//\\//\\//\\//\\//\\//\\//\\//\\//\\//\\//\\//\\//\\//\\//\\//\\//\\//\\//\\
         var thePrison = prompt("You wake up and see a man in the same bed you are in you get up not knowing why you are in this place. \n -wake man \n -taunt guard");
-        invintory.spitAmo = 10;
-        
+        invintory.spitAm = 10;
         switch(thePrison){
             case"inventory": case"i": case"check inventory":
                 checkinventory();
@@ -76,7 +67,7 @@ function game(){
                             var againspit = prompt("You spit as hard as you can but just miss but he does not move you cant even see him breath. Do you want to spit again? You have :" +invintory.spitAmo  + " spitamo");
                             switch(againspit){
                                 case"y": case"yes":
-                                    invintory.spitAmo --;
+                                    invintory.spitAm--;
                                     break;
                                 case"n": case"no":
                                     StandingInThePrison();
@@ -114,9 +105,6 @@ function game(){
             break;
         }
     }
-//\\//\\//\\//\\//\\//\\//\\//\\//\\//\\//\\//\\//\\//\\//\\//\\//\\//\\//\\//\\//\\//\\//\\//\\//\\//\\//\\//\\//\\//\\//\\//\\//\\//\\//\\//\\//\\//\\//\\//\\
-
-    
     function StandingInThePrison(){
         
         if(manDead == 0){
@@ -193,70 +181,69 @@ function game(){
             
         }
     }
-        
-        function RunningAway(){
-            var runningaway = prompt("You are now running away! YA! You come to a fork in the road. \n - left \n - right");
+    function RunningAway(){
+        var runningaway = prompt("You are now running away! YA! You come to a fork in the road. \n - left \n - right");
             
-            switch(runningaway){
-                        case"inventory": case"i": case"check inventory":
-                            checkinventory();
-                            RunningAway();
-                        break;
+        switch(runningaway){
+                    case"inventory": case"i": case"check inventory":
+                        checkinventory();
+                        RunningAway();
+                    break;
                         
-            case "1": case "l": case "left":
-                var window = alert("You go left and see an old man!");
-                Left();
+        case "1": case "l": case "left":
+            var window = alert("You go left and see an old man!");
+            Left();
                     
-            break;
+        break;
                 
-            case "2": case "r": case "right":
-                var window = alert("you go right and see an old lady!");
-                Right();
-            break;
+        case "2": case "r": case "right":
+            var window = alert("you go right and see an old lady!");
+            Right();
+        break;
                     
-            default:
-                alert("I dont know what " + runningaway +" is.")
-                RunningAway();
-            break;
-            }
+        default:
+            alert("I dont know what " + runningaway +" is.")
+            RunningAway();
+        break;
         }
-        function Left(){
-            var left = prompt("The old man says 'In order to pass you must answer this ridle, there are 100 inhabitents in a vilage and you know at least one of them is a werewolf and you also know werewolf lie and humans tell the trueth all of the inhabitents say at least one of us is a human haw many werewolf are there?'")
+    }
+    function Left(){
+        var left = prompt("The old man says 'In order to pass you must answer this ridle, there are 100 inhabitents in a vilage and you know at least one of them is a werewolf and you also know werewolf lie and humans tell the trueth all of the inhabitents say at least one of us is a human haw many werewolf are there?'")
             
-            switch(left){
-                        case"inventory": case"i": case"check inventory":
-                            checkinventory();
-                            Left();
-                        break;
+        switch(left){
+                    case"inventory": case"i": case"check inventory":
+                        checkinventory();
+                        Left();
+                    break;
                         
-            case "100": case "all": case "all of them":
-                var window = alert("correct!! now you may pass.");
+        case "100": case "all": case "all of them":
+            var window = alert("correct!! now you may pass.");
                 
-            break;
+        break;
                     
-            default:
-                alert("ha ha ha no now you need to go back!! and try again")
-                ThePrison();
-            break;
-            }
+        default:
+            alert("ha ha ha no now you need to go back!! and try again")
+            ThePrison();
+        break;
         }
-        function Right(){
-            var right = prompt("The old Lady says 'In order to pass you must answer this ridle, whats black and white and read all over!?'")
+    }
+    function Right(){
+        var right = prompt("The old Lady says 'In order to pass you must answer this ridle, whats black and white and read all over!?'")
             
-            switch(right){
-                        case"inventory": case"i": case"check inventory":
-                            checkinventory();
-                            Right();
-                        break;
+        switch(right){
+                    case"inventory": case"i": case"check inventory":
+                        checkinventory();
+                        Right();
+                     break;
                         
-            case "news paper": case "news": case "panguin in the sun":
-                var window = alert("correct!! now you may pass.");
+        case "news paper": case "news": case "panguin in the sun":
+            var window = alert("correct!! now you may pass.");
                 
-            break;
+        break;
                     
-            default:
-                alert("ha ha ha no now you need to go back!! and try again")
-                ThePrison();
-            break;
-            }
+        default:
+            alert("ha ha ha no now you need to go back!! and try again")
+            ThePrison();
+        break;
         }
+    }
