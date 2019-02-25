@@ -5,11 +5,13 @@ var invintory = {
     spitAmo: 10,
     badyM: 0
 };
+var badyHP = 10;
 var checkinventory = function () {
     alert("stuff:\n coins: " + invintory.coins + "\n food: " + invintory.food + "\n sword: " + invintory.sword + "\n spitamo: " + invintory.spitAmo);
 }
 var manDead = 0;
 var word;
+const answer = 100;
 again = true;
 game();
 function game(){
@@ -21,7 +23,7 @@ function game(){
     function ThePrison(){
 //\\//\\//\\//\\//\\//\\//\\//\\//\\//\\//\\//\\//\\//\\//\\//\\//\\//\\//\\//\\//\\//\\//\\//\\//\\//\\//\\//\\//\\//\\//\\//\\//\\//\\//\\//\\//\\//\\//\\//\\
         var thePrison = prompt("You wake up and see a man in the same bed you are in you get up not knowing why you are in this place. \n -wake man \n -taunt guard");
-        invintory.spitAm = 10;
+        //invintory.spitAm = 10;
         switch(thePrison){
             case"inventory": case"i": case"check inventory":
                 checkinventory();
@@ -64,10 +66,14 @@ function game(){
                         
                     case "1": case "spit":
                         while (again){
+                            if(invintory.spitAmo <= 0){
+                                alert("your mouth is dry");
+                                StandingInThePrison();
+                            }
                             var againspit = prompt("You spit as hard as you can but just miss but he does not move you cant even see him breath. Do you want to spit again? You have :" +invintory.spitAmo  + " spitamo");
                             switch(againspit){
                                 case"y": case"yes":
-                                    invintory.spitAm--;
+                                    invintory.spitAmo--;
                                     break;
                                 case"n": case"no":
                                     StandingInThePrison();
@@ -76,10 +82,7 @@ function game(){
                                     alert("I dont know what " + againspit +" is.") 
                                 break;
                             }
-                        if(invintory.spitAmo <= 0){
-                            alert("your mouth is dry");
-                            StandingInThePrison();
-                        }
+                        
                         }
                         
                     
@@ -108,10 +111,10 @@ function game(){
     function StandingInThePrison(){
         
         if(manDead == 0){
-            var standingInThePrison = prompt("You are in the midle of the room \n -eat mold \n -sleep \n -kill the man in bed ");
+            var standingInThePrison = prompt("You are in the midle of the room and see some mold, the bed and a man sleeping in the bed \n -eat mold \n -sleep \n -kill the man in bed ");
         }
         if(manDead == 1){
-            var standingInThePrison = prompt("You are in the midle of the room \n -eat mold \n -look \n -sleep");
+            var standingInThePrison = prompt("You are in the midle of the room \n -eat mold \n -sleep");
         }
         
         switch(standingInThePrison){
@@ -171,7 +174,7 @@ function game(){
             case "3": case "spit at guard so hard he dies": case "spit": case "spit at guard":
                 var window = alert("you spit so hard and pierces his helm but does not move.");
                 
-                RunningAway();
+                ReadytoFight();
             break;
                 
             default:
@@ -180,6 +183,31 @@ function game(){
             break;
             
         }
+    }
+    function Fighting(){
+        var fighting = prompt("You come to a fat mage man and he says fight me! I'm lonely.\n What do you want to fight him with? \n - sword \n - spit \n - hands");
+        
+        switch(readytofight){
+            case "1": case "sword":
+                badyHP -=2
+                prompt("you slash at him and strike a hit! He is now at " +badyHP+" HP");
+            break;
+                
+            case "2": case "spit":
+                invintory.spitAmo -= 5
+                badyHP -=3
+                prompt("you spit at him and spats all over his face! He is now at " +badyHP+" HP \n You now have "+invintory.spitAmo+" spitamo left" );
+            break;
+            
+            case "3": case "hands":
+                badyHP -=1
+                prompt("you slash at him and strike a hit! He is now at " +badyHP+" HP");
+            break;
+                
+            default:
+                alert("I dont know what " + fighting +" is.")
+                Fighting();
+            break;
     }
     function RunningAway(){
         var runningaway = prompt("You are now running away! YA! You come to a fork in the road. \n - left \n - right");
@@ -208,7 +236,7 @@ function game(){
         }
     }
     function Left(){
-        var left = prompt("The old man says 'In order to pass you must answer this ridle, there are 100 inhabitents in a vilage and you know at least one of them is a werewolf and you also know werewolf lie and humans tell the trueth all of the inhabitents say at least one of us is a human haw many werewolf are there?'")
+        var left = prompt("The old man says 'In order to pass you must answer this ridle, there are 100 inhabitents in a vilage and you know at least one of them is a werewolf and you also know werewolf lie and humans tell the trueth all of the inhabitents say at least one of us is a human how many werewolf are there?'")
             
         switch(left){
                     case"inventory": case"i": case"check inventory":
@@ -217,7 +245,7 @@ function game(){
                     break;
                         
         case "100": case "all": case "all of them":
-            var window = alert("correct!! now you may pass.");
+            var window = alert("correct!! The answer is " +answer+ " now you may pass.");
                 
         break;
                     
