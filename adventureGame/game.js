@@ -3,6 +3,7 @@ var invintory = {
     food: 0,
     sword: 0,
     spitAmo: 10,
+    HP:10,
     badyM: 0
 };
 var badyHP = 10;
@@ -11,9 +12,11 @@ var checkinventory = function () {
 }
 var manDead = 0;
 var word;
-const answer = 100;
-again = true;
-game();
+//const answer = 100;
+var badyHP = 10;
+var again = true;
+//game();
+Fighting();
 function game(){
     document.write("Legend of my mouth");
     var playerName = prompt("waht is your name?");
@@ -162,19 +165,19 @@ function game(){
             case "1": case "break window": case "break":
                 var window = alert("you break the window and run away!");
                 
-                RunningAway();
+                Fighting();
             break;
                 
             case "2": case "dig under prison": case "dig":
                 var window = alert("you dig and dig and see the light of day and run away!");
                 
-                RunningAway();
+                Fighting();
             break;
             
             case "3": case "spit at guard so hard he dies": case "spit": case "spit at guard":
                 var window = alert("you spit so hard and pierces his helm but does not move.");
                 
-                ReadytoFight();
+                Fighting();
             break;
                 
             default:
@@ -185,30 +188,75 @@ function game(){
         }
     }
     function Fighting(){
-        var fighting = prompt("You come to a fat mage man and he says fight me! I'm lonely.\n What do you want to fight him with? \n - sword \n - spit \n - hands");
-        
-        switch(readytofight){
-            case "1": case "sword":
-                badyHP -=2
-                prompt("you slash at him and strike a hit! He is now at " +badyHP+" HP");
-            break;
+        var fighting = alert("You come to a fat mage man and he says 'Fight me! I'm lonely.'");
+        Fightingmore();
+        function Fightingmore(){
+            for(i=5;i>=0;i--){
+            var fightingmore = prompt("What do you want to fight him with? \n - sword \n - spit \n - hands");
+            switch(fightingmore){
+                case "1": case "sword":
+                    badyHP -=2
+                    alert("you slash at him and strike a hit! He is now at " +badyHP+" HP");
+                    invintory.HP--;
+                    alert("He slaps you. You are at "+invintory.HP+" HP!");
+                    if(badyHP <= 0){
+                            alert("You win!");
+                            RunningAway();
+                        }
+                break;
                 
-            case "2": case "spit":
-                invintory.spitAmo -= 5
-                badyHP -=3
-                prompt("you spit at him and spats all over his face! He is now at " +badyHP+" HP \n You now have "+invintory.spitAmo+" spitamo left" );
-            break;
+                case "2": case "spit":
+                    if(invintory.spitAmo > 0){
+                        invintory.spitAmo -= 5
+                        badyHP -=3
+                        alert("you spit at him and spats all over his face! He is now at " +badyHP+" HP \n You now have "+invintory.spitAmo+" spitamo left" );
+                        invintory.HP--;
+                        alert("He spits back at you. You are at "+invintory.HP+" HP!");
+                    }
+                    else{
+                        alert("Your mouth is dry!")
+                        Fightingmore()
+                    }
+                    if(badyHP <= 0){
+                            alert("You win!");
+                            RunningAway();
+                        }
+                    
+                break;
             
-            case "3": case "hands":
-                badyHP -=1
-                prompt("you slash at him and strike a hit! He is now at " +badyHP+" HP");
-            break;
+                case "3": case "hands":
+                    badyHP -=1
+                    alert("you smack him and strike a hit! He is now at " +badyHP+" HP");
+                    invintory.HP--;
+                    alert("He stabs you with his finger. You are at "+invintory.HP+" HP!");
+                    if(badyHP <= 0){
+                            alert("You win!");
+                            RunningAway();
+                        }
+                    
+                break;
                 
-            default:
-                alert("I dont know what " + fighting +" is.")
-                Fighting();
-            break;
-    }
+                default:
+                    alert("I dont know what " + fightingmore +" is.")
+                break;
+                
+                }
+            }
+            }
+            if(badyHP <= 0){
+                i = 0;
+                RunningAway();
+            }
+            else if(badyHP > 0){
+                var die = confirm("You die. Continue?");
+                if(die == true){
+                    ThePrison()
+                }   
+                else{
+                    end();
+                }
+            }
+        }  
     function RunningAway(){
         var runningaway = prompt("You are now running away! YA! You come to a fork in the road. \n - left \n - right");
             
@@ -266,7 +314,7 @@ function game(){
                         
         case "news paper": case "news": case "panguin in the sun":
             var window = alert("correct!! now you may pass.");
-                
+            ldksfja  
         break;
                     
         default:
@@ -275,3 +323,4 @@ function game(){
         break;
         }
     }
+    function end(){}
