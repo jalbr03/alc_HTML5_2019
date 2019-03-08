@@ -15,8 +15,8 @@ var word;
 //const answer = 100;
 var badyHP = 10;
 var again = true;
-//game();
-Fighting();
+game();
+//Fighting();
 function game(){
     document.write("Legend of my mouth");
     var playerName = prompt("waht is your name?");
@@ -314,7 +314,7 @@ function game(){
                         
         case "news paper": case "news": case "panguin in the sun":
             var window = alert("correct!! now you may pass.");
-            ldksfja  
+             
         break;
                     
         default:
