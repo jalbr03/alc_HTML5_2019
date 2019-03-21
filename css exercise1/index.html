@@ -38,6 +38,48 @@
                 left: 600px;
                 top: 500px;
             }
+            div#triangle{
+                /* solid transparent , solid red*/
+                width: 0;
+                height: 0;
+                border-left: 200px solid red;
+                border-right: 10px solid darkblue;
+                border-top: 10px solid darkred;
+                border-bottom: 200px solid blue;
+                position: absolute;
+                left: 900px;
+                top: 500px;
+            }
+            
+            div#box1{
+                background-color: aqua;
+                width: 230px;
+                height: 230px;
+                position: absolute;
+                left: 1200px;
+                top: 500px;
+            }
+            div#box2{
+                background-color: darkblue ;
+                width: 230px;
+                height: 230px;
+                position: absolute;
+                left: 1250px;
+                top: 450px;
+            }
+            img#cup{
+                display: block;
+                width: auto;
+                height: auto;
+                border: solid 10px blue;
+                border-radius: 50%;
+                box-shadow: 20px 20px 50px;
+                z-index: 1;
+                position: absolute;
+                left: 200px;
+                top: 150px;
+            }
+            
         </style>
     </head>
     <body>
@@ -45,5 +87,9 @@
         <h3>vol.1</h3>
         <div id="box"></div>
         <div id="circle"></div>
+        <div id="triangle"></div>
+        <div id="box2"></div>
+        <div id="box1"></div>
+        <img src="cup.jpg" id="cup">
     </body>
 </html>
