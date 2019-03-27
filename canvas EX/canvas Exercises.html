@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html>
+    <body>
+        <!--<canvas id="myCanvas" width="200" height="100" style="border: 44666667px solid #000000"></canvas>-->
+        <canvas id="myCanvas" width="800" height="800" style="border: 10px solid #000000"></canvas>
+        <script>
+            var canvas = document.getElementById("myCanvas");
+            var ctx = canvas.getContext("2d")
+            //rect
+            ctx.fillStyle = "#ff0000";
+            ctx.fillRect(0,50, 200, 50);
+            //draw line
+            ctx.moveTo(0,0)
+            ctx.lineTo(200,100);
+            ctx.stroke();
+            //draw circle
+            ctx.beginPath();
+            ctx.arc(95,50,50,3.14,2 * Math.PI);
+            ctx.stroke();
+            
+            //gradiant
+            var grd=ctx.createLinearGradient(0,50,200,50)
+            grd.addColorStop(0, "red")
+            grd.addColorStop(1, "white")
+            ctx.fillStyle = grd;
+            ctx.fillRect(0,500,400,400);
+            //radio
+        </script>
+    </body>
+    
+</html>s
