@@ -1,1 +1,82 @@
 /* stylesheet for app */
+/*reset*/
+
+html,body,div,p,ul,ol,li,h1,h2,h3,h4,h5,h6
+{
+    margin: 0px;
+    padding: 0;
+}
+
+body{
+    background-color: skyblue;
+}
+
+div#container{
+    width: 1200px;
+    height: 800px;
+    border: 3px dashed orange;
+    background-color: black;
+}
+div#container {
+    color: dimgray;
+}
+
+header{
+    width: 91.7%;
+    padding:50px;
+    background-color: #919985;
+}
+
+header h1{
+    margin:auto;
+    width: 34%;
+    color: dimgray;
+    background-color: #eee;
+    font-family: 'Special Elite', cursive;
+    font-size: 10em;
+    
+}
+
+
+
+div#content{
+    width: 100%;
+    background-color: bisque;
+}
+
+div#content img{
+    display:block;
+    margin:auto;
+}
+nav{
+    background-color: cadetblue;
+    color: ghostwhite;
+    font-family: sans-serif;
+    font-size: 2em
+}
+
+nav ul{
+	list-style: none;
+}
+nav ul li{
+	float:left;
+	padding:5px 15px;
+	border-right: 1px solid #af904a;
+}
+nav ul li a{
+	color:ghostwhite;
+	text-decoration: none;
+}
+nav ul li a:hover{
+	background-color:antiquewhite;
+	color:darkslategray;
+}
+
+footer{
+	width:100%;
+	height:50px;
+	background-color: chocolate;	
+}
+div.keepOpen{
+	clear: both;
+}
