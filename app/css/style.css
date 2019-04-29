@@ -37,7 +37,7 @@ header h1{
     
 }
 header#head img{
-    width: 30%;
+    width: 20%;
     display:block;
     margin:auto;
     
@@ -50,10 +50,37 @@ div#content{
 }
 
 div#content img{
-    width: 100%;
+    width: 50%;
     display:block;
     margin:auto;
 }
+
+
+.icon-bar {
+  position:absolute;
+  bottom:0;
+  width: 100%;
+  background-color: #555;
+  overflow: auto;
+}
+.icon-bar a {
+  float: left;
+  width: 20%;
+  text-align: center;
+  padding: 12px 0;
+  transition: all 0.3s ease;
+  color: white;
+  font-size: 36px;
+}
+.icon-bar a:hover {
+  background-color: #000;
+}
+
+.active {
+  background-color: #ffa20e;
+}
+
+/*
 nav{
     background-color: cadetblue;
     color: ghostwhite;
@@ -93,3 +120,15 @@ footer#foot h1{
 div.keepOpen{
 	clear: both;
 }
+
+@media screen and (max-width: 600px) {
+	div#container{
+		width:100%;
+	}
+	
+	nav ul li a{
+		float:none;	
+		text-align:center;
+	}
+}
+*/
