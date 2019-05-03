@@ -42,6 +42,14 @@ header#head img{
     margin:auto;
     
 }
+header#head h2{
+    width: 10%;
+    font-size: 50px;
+    color: #fb0;
+    display:block;
+    margin:auto;
+    
+}
 
 
 div#content{
