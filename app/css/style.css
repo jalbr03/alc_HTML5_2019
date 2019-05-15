@@ -214,5 +214,73 @@ figure.VR{
     font-size: 24px;
 }
 
+@media screen and (max-width: 1200px) {
+	figure.product{
+		float:none;
+		margin:10px auto;
+		min-width:50%;
+		max-width:100%;
+		background-color: cadetblue;
+		border-radius:5%;
+	}
+	figure.product figcaption{
+	text-align: center;
+	color:white;
+	font-family: fantasy;
+	font-size:12px;
+    }
+}
+	 legend, span, input, textarea {
+		display:block;
+		margin:auto;
+		text-align:center;
+		font-family:sans-serif;
+		color:black;
+    }
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 
